@@ -1,7 +1,7 @@
 # Real Estate dApp
-This is a real estate Dapp that lets you buy houses. 
-Users can buy as houses and lso place houses on sell.
-It has numbers of houses available for sale feature. users are unable to buy a particular house once amount sold is upto available number of houses.
+This is a real estate Dapp that allow users buy houses. 
+Users can buy houses and also place houses on sale.
+It has numbers of houses available for sale feature. users are unable to buy a particular house once amount sold is up to available number of houses.
 
 # Demo Link
 
