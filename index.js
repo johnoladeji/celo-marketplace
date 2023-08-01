@@ -1,1 +1,1 @@
-
+const house = "bungalow"
