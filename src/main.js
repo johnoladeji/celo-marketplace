@@ -5,7 +5,7 @@ import marketplaceAbi from "../contract/house.abi.json"
 import erc20Abi from "../contract/erc20.abi.json"
 
 const ERC20_DECIMALS = 18
-const MPContractAddress = "0xB314dAe2343f7d56549205363941C35ff4A2d302"
+const MPContractAddress = "0x7134187B0B49f289c1E40ef665FA3c0E92c31943"
 const cUSDContractAddress = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1"
 
 let kit
