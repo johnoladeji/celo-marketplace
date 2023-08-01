@@ -1,4 +1,4 @@
-# Vote For Me
+# Real Estate dApp
 This is a real estate Dapp that lets you buy houses. 
 Users can buy as houses and lso place houses on sell.
 It has numbers of houses available for sale feature. users are unable to buy a particular house once amount sold is upto available number of houses.
