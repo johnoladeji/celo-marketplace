@@ -179,8 +179,18 @@ document
       .shiftedBy(ERC20_DECIMALS)
       .toString(),
       document.getElementById("newSupply").value
-      
     ]
+    if (
+      !params[0] ||
+      !params[1] ||
+      !params[2] ||
+      !params[3] ||
+      !params[4] ||
+      !params[5]
+    ) {
+      notification("⚠️ Please fill in all the required fields.")
+      return;
+    }
     notification(`⌛ Adding "${params[0]}"...`)
     try {
       const result = await contract.methods
