@@ -76,98 +76,107 @@
     </div>
 
 <!--Modal-->
-    <div
-      class="modal fade"
-      id="addModal"
-      tabindex="-1"
-      aria-labelledby="newProductModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="newProductModalLabel">New Home</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+<div
+  class="modal fade"
+  id="addModal"
+  tabindex="-1"
+  aria-labelledby="newProductModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newProductModalLabel">New Home</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <div class="col">
+              <input
+                type="text"
+                id="newProductName"
+                class="form-control mb-2"
+                placeholder="Enter type of house"
+                required
+              />
+            </div>
+            <div class="col">
+              <input
+                type="url"
+                id="newImgUrl"
+                class="form-control mb-2"
+                placeholder="Enter image URL"
+                required
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="newProductDescription"
+                class="form-control mb-2"
+                placeholder="Enter house description"
+                required
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="newLocation"
+                class="form-control mb-2"
+                placeholder="Enter location"
+                required
+              />
+            </div>
+            <div class="col">
+              <input
+                type="number"
+                id="newPrice"
+                class="form-control mb-2"
+                placeholder="Enter price"
+                required
+              />
+            </div>
+            <div class="col">
+              <input
+                type="number"
+                id="newSupply"
+                class="form-control mb-2"
+                placeholder="Enter number of houses available for sale"
+                required
+                min="1"
+              />
+            </div>
           </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-row">
-                <div class="col">
-                  <input
-                    type="text"
-                    id="newProductName"
-                    class="form-control mb-2"
-                    placeholder="Enter type of house"
-                  />
-                </div>
-                <div class="col">
-                  <input
-                    type="text"
-                    id="newImgUrl"
-                    class="form-control mb-2"
-                    placeholder="Enter image url"
-                  />
-                </div>
-                <div class="col">
-                  <input
-                    type="text"
-                    id="newProductDescription"
-                    class="form-control mb-2"
-                    placeholder="Enter house description"
-                  />
-                </div>
-                <div class="col">
-                  <input
-                    type="text"
-                    id="newLocation"
-                    class="form-control mb-2"
-                    placeholder="Enter location"
-                  />
-                </div>
-                <div class="col">
-                  <input
-                    type="text"
-                    id="newPrice"
-                    class="form-control mb-2"
-                    placeholder="Enter price"
-                  />
-                </div>
-                <div class="col">
-                  <input
-                    type="text"
-                    id="newSupply"
-                    class="form-control mb-2"
-                    placeholder="Enter number of house available for sale"
-                  />
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-light border"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button
-              type="button"
-              class="btn btn-dark"
-              data-bs-dismiss="modal"
-              id="newProductBtn"
-            >
-              Add House
-            </button>
-          </div>
-        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-light border"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-dark"
+          data-bs-dismiss="modal"
+          id="newProductBtn"
+        >
+          Add House
+        </button>
       </div>
     </div>
+  </div>
+</div>
+<!--/Modal-->
+
 <!--/Modal-->
 
     <script
