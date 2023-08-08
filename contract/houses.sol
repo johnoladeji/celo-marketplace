@@ -19,6 +19,23 @@ contract Marketplace {
     uint internal housesLength = 0;
     address internal cUsdTokenAddress = 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
+       event HouseAdded(
+        address indexed owner,
+        string name,
+        string image,
+        string description,
+        string location,
+        uint price,
+        uint supply
+    );
+
+    event HousePurchased(
+        uint indexed index,
+        address buyer,
+        uint price
+    );
+
+
     struct House {
         address payable owner;
         string name;
@@ -52,6 +69,15 @@ contract Marketplace {
             _supply
         );
         housesLength++;
+          emit HouseAdded(
+            msg.sender,
+            _name,
+            _image,
+            _description,
+            _location,
+            _price,
+            _supply
+        );
     }
 
     function readHouse(uint _index) public view returns (
@@ -77,18 +103,26 @@ contract Marketplace {
         );
     }
 
-    function buyHouse(uint _index) public payable  {
-       require(houses[_index].supply != houses[_index].sold, "Ticket sold out");
-        require(
-          IERC20Token(cUsdTokenAddress).transferFrom(
+  function buyHouse(uint _index) public payable {
+    require(_index < housesLength, "Invalid house index"); // Check if the house exists at the given index
+    require(houses[_index].supply != houses[_index].sold, "Ticket sold out");
+    require(
+        IERC20Token(cUsdTokenAddress).transferFrom(
             msg.sender,
             houses[_index].owner,
             houses[_index].price
-          ),
-          "Transfer failed."
+        ),
+        "Transfer failed."
+    );
+    houses[_index].sold++;
+
+      emit HousePurchased(
+            _index,
+            msg.sender,
+            houses[_index].price
         );
-        houses[_index].sold++;
-    }
+}
+
     
     function getHousesLength() public view returns (uint) {
         return (housesLength);
@@ -98,12 +132,12 @@ contract Marketplace {
         return houses[_index].supply;
     }
     
-    function disableBuy(uint _index) public view returns(bool) {
-        if(houses[_index].supply == houses[_index].sold  ) {
-            return false;
-        } else {
-            return true;
-        }
-
+  function disableBuy(uint _index) public view returns (bool) {
+    if (houses[_index].supply == houses[_index].sold) {
+        return true; // Buying is disabled when the house is sold out.
+    } else {
+        return false; // Buying is enabled when the house is still available.
     }
+}
+
 }
